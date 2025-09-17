@@ -4,7 +4,7 @@ LIMIT 10;
 
 
 
----I will attempt to remove the spaces in the Name, Email and Social_Media_Handle fields.
+---I will attempt to remove the spaces in the Name, Email, and Social_Media_Handle fields.
 UPDATE user_profiles
 SET Social_Media_Handle = REPLACE(Social_Media_Handle, '  ', ''),
     Email = REPLACE(Email, '  ', ''),
@@ -35,21 +35,21 @@ SELECT
     END AS Age_Group,
     CASE
         WHEN Age < 18 THEN 'Under 18'
-        WHEN Age BETWEEN 18 AND 24 THEN '18–24'
-        WHEN Age BETWEEN 25 AND 34 THEN '25–34'
-        WHEN Age BETWEEN 35 AND 44 THEN '35–44'
-        WHEN Age BETWEEN 45 AND 54 THEN '45–54'
-        WHEN Age BETWEEN 55 AND 64 THEN '55–64'
+        WHEN Age BETWEEN 18 AND 24 THEN '18â€“24'
+        WHEN Age BETWEEN 25 AND 34 THEN '25â€“34'
+        WHEN Age BETWEEN 35 AND 44 THEN '35â€“44'
+        WHEN Age BETWEEN 45 AND 54 THEN '45â€“54'
+        WHEN Age BETWEEN 55 AND 64 THEN '55â€“64'
         ELSE '65+'
     END AS Age_Category
 FROM user_profiles
 LIMIT 10;
 
----I will now update the table permanently, to include these columns. 
----First, I add the actual columns.
+---I will now update the table permanently to include these columns. 
+---First, I add the actual columns, then I will add the data via Case Statements. 
 
 ALTER TABLE user_profiles 
-ADD COLUMNS (Age_Group STRING);
+ADD COLUMNS (Age_Group STRING);4
 
 UPDATE user_profiles
 SET Age_Group = CASE
@@ -66,23 +66,23 @@ ADD COLUMNS (Age_Category STRING);
 UPDATE user_profiles
 SET Age_Category = CASE
     WHEN Age < 18 THEN 'Under 18'
-    WHEN Age BETWEEN 18 AND 24 THEN '18–24'
-    WHEN Age BETWEEN 25 AND 34 THEN '25–34'
-    WHEN Age BETWEEN 35 AND 44 THEN '35–44'
-    WHEN Age BETWEEN 45 AND 54 THEN '45–54'
-    WHEN Age BETWEEN 55 AND 64 THEN '55–64'
+    WHEN Age BETWEEN 18 AND 24 THEN '18â€“24'
+    WHEN Age BETWEEN 25 AND 34 THEN '25â€“34'
+    WHEN Age BETWEEN 35 AND 44 THEN '35â€“44'
+    WHEN Age BETWEEN 45 AND 54 THEN '45â€“54'
+    WHEN Age BETWEEN 55 AND 64 THEN '55â€“64'
     ELSE '65+'
 END;
 
--- Add the new column
+-- I am adding a new column for Name & Surname into Full Name. 
 ALTER TABLE user_profiles 
 ADD COLUMNS (Full_Name STRING);
 
--- Populate the new column with Name + Surname
+-- I populate the new column with Name + Surname. I use CONCACT to concatenate the two columns into one. 
 UPDATE user_profiles
 SET Full_Name = CONCAT(Name, ' ', Surname);
 
----Test, I am organising the columns in a logical order, that looks and reads better.
+---Test, I am organising the columns in a logical order, which looks and reads better.
 SELECT
     UserID,
     Full_Name,
@@ -95,4 +95,5 @@ SELECT
     Social_Media_Handle,
     Province
 FROM user_profiles;
+
 
