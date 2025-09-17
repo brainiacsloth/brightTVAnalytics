@@ -1,6 +1,6 @@
 # BrightTV Analytics
 
-## 📌 Objectives of the Assessment
+## Objectives of the Assessment
 The goal of this assessment was to help BrightTV’s leadership team uncover insights that would guide the growth of the subscription base. Specifically, the analysis focused on:
 
 - Understanding **user and usage trends**  
@@ -12,7 +12,7 @@ To achieve this, I worked with two key datasets: **Viewership data** and **User 
 
 ---
 
-## 📊 Viewership Data Work
+## Viewership Data Work
 I began by exploring the viewership dataset and applied several transformations to make it more insightful:
 
 - **Date and Time Handling**  
@@ -37,7 +37,7 @@ These changes provided a structured dataset that made it easier to identify tren
 
 ---
 
-## 👤 User Profiles Data Work
+## User Profiles Data Work
 The user profiles dataset contained demographic and personal details. I focused on cleaning and enriching it:
 
 - **Data Cleaning**  
@@ -57,7 +57,7 @@ The result was a cleaned and enriched dataset that allows demographic insights t
 
 ---
 
-## 🗂️ Project Planning in MIRO
+## Project Planning in MIRO
 Alongside the data work, I built an **extensive project plan in MIRO**. This plan:  
 
 - Outlined the steps of the BrightTV case study, from initial data exploration to final presentation.  
@@ -67,12 +67,3 @@ Alongside the data work, I built an **extensive project plan in MIRO**. This pla
 The MIRO plan provided a clear roadmap that ensured all data analysis steps aligned with BrightTV’s strategic goal of subscription growth.
 
 ---
-
-## 🚀 Outcomes
-With both datasets cleaned and transformed, the foundation is now set to:
-
-- Identify **when and what users are watching**  
-- Connect **demographics to viewing habits**  
-- Spot **patterns across days, times, and content categories**  
-
-These structured insights will directly support BrightTV in designing content strategies and initiatives aimed at increasing user engagement and growing the subscription base.
